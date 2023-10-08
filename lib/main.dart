@@ -4,17 +4,18 @@ import 'package:portfolio/skills.dart';
 
 void main() {
   return runApp(const MaterialApp(
+
     debugShowCheckedModeBanner: false,
     home: MyPortfolio(),
   ));
 }
-
 class MyPortfolio extends StatelessWidget {
   const MyPortfolio({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       home: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
@@ -22,29 +23,27 @@ class MyPortfolio extends StatelessWidget {
           title: const Text(
             "My portfolio",
             style: TextStyle(
+              color: Colors.red,
               fontSize: 20,
               fontFamily: 'Oswald',
             ),
           ),
         ),
         drawer: Drawer(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.black45,
 
             child: ListView(
           children: [
-            UserAccountsDrawerHeader(
-                currentAccountPicture: const CircleAvatar(
+            const UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
                   radius: 100,
-                  backgroundImage: AssetImage("assets/me.jpg"),
+                  backgroundImage: AssetImage("assets/me2.jpg"),
                 ),
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                     gradient: LinearGradient(
                   colors: <Color>[
-                    Color(0xfff44369),
-                    Color(0xff3e3b92),
-                    //   Color(0xff00d4ff),
-                    //   Color(0xff00bbbb),
-                    //    Color(0xff00aaaa),
+                    Color(0xff210D10),
+                    Color(0xff802201),
                   ],
                 )),
                 accountName: Text('Prajjwal Tripathi',
@@ -52,7 +51,7 @@ class MyPortfolio extends StatelessWidget {
                   fontSize: 20,
                   fontFamily: 'Oswald',
                 ),),
-                accountEmail: Text('p@gmail.com',
+                accountEmail: Text('prajjwalit@gmail.com',
                   style: TextStyle(
                   fontSize: 20,
                   fontFamily: 'Oswald',
@@ -86,50 +85,57 @@ class MyPortfolio extends StatelessWidget {
         )),
         body: Center(
           child: Container(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(10.0),
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
               colors: <Color>[
-                Color(0xfff44369),
-                Color(0xff3e3b92),
-                //   Color(0xff00d4ff),
-                //   Color(0xff00bbbb),
-                //    Color(0xff00aaaa),
+                Color(0xff210D10),
+                Color(0xff802201),
+
               ],
             )),
             child: SingleChildScrollView(
               child: Column(
                 children: [
                   const Image(
-                    image: AssetImage('assets/portfolioimage.png'),
+                    image: AssetImage('assets/portfolioimg1.png'),
+                   height: 200,
+                    width: 300,
                   ),
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 105,
-                    backgroundColor: Colors.black,
-                    child: const CircleAvatar(
+                    backgroundColor: Colors.redAccent,
+                    child: CircleAvatar(
                       radius: 100,
-                      backgroundImage: AssetImage("assets/me.jpg"),
+                      backgroundImage: AssetImage("assets/me2.jpg"),
                     ),
                   ),
-                  const Text(
-                    ('hello my name is Prajjwal Tripathi. \n I am a sophomore at AKGEC, ghaziabad, pursuing my bachelor’s degree  in computer science.'),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25.0,
-                      letterSpacing: 1.5,
-                      fontFamily: 'Dela',
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: const Text(
+                      ('hello my name is Prajjwal Tripathi. \n I am a sophomore at AKGEC, ghaziabad, pursuing my bachelor’s degree  in computer science.'),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25.0,
+                        letterSpacing: 1.5,
+                        fontFamily: 'Dela',
+                      ),
                     ),
                   ),
-                  const Text(
-                    ('I am currently venturing into the field of app development. As a Flutter developer i am excited to explore and work in this domain and build unique projects to showcase my skills '),
-                    style: TextStyle(
-                      color: Colors.white70,
-                      fontSize: 20.0,
-                      fontFamily: 'Dela',
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: const Text(
+                      ('I am currently venturing into the field of app development.\nAs a Flutter developer i am excited to explore and work in this domain and build unique projects to showcase my skills. '),
+                      style: TextStyle(
+                        color: Colors.redAccent,
+                        fontSize: 22.0,
+                        fontFamily: 'Dela',
+                      ),
                     ),
                   ),
                   Row(children: <Widget>[
                     ElevatedButton(
+
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -137,8 +143,12 @@ class MyPortfolio extends StatelessWidget {
                                 builder: (context) => const MyInterest()),
                           );
                         },
-                        child: Text('My interests')),
-                    SizedBox(width: 20,),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          foregroundColor: Colors.redAccent// Background color
+                        ),
+                        child: const Text('My interests')),
+                    const SizedBox(width: 20,),
                     ElevatedButton(
                         onPressed: () {
                           Navigator.push(
@@ -147,7 +157,11 @@ class MyPortfolio extends StatelessWidget {
                                 builder: (context) => const MySkills()),
                           );
                         },
-                        child: Text('My skills')),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.black,
+                            foregroundColor: Colors.redAccent// Background color
+                        ),
+                        child: const Text('My skills')),
                   ]),
                 ],
               ),
