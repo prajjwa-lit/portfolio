@@ -113,7 +113,7 @@ class MyPortfolio extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: const Text(
-                      ('hello my name is Prajjwal Tripathi. \n I am a sophomore at AKGEC, ghaziabad, pursuing my bachelor’s degree  in computer science.'),
+                      ('Hello my name is Prajjwal Tripathi. \n I am a sophomore at AKGEC, ghaziabad, pursuing my bachelor’s degree  in computer science.'),
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 25.0,
