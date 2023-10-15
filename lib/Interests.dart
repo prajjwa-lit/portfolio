@@ -8,10 +8,10 @@ class MyInterest extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.indigo[900],
         title: const Text("My hobbies and Interests",
           style: TextStyle(
-            color: Colors.red,
+            color: Colors.white,
             fontSize: 20,
             fontFamily: 'Oswald',
           ),
@@ -22,11 +22,14 @@ class MyInterest extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(10.0),
           decoration: const BoxDecoration(
-          gradient: LinearGradient(
-          colors: <Color>[
-          Color(0xff210D10),
-          Color(0xff802201),
-          ],
+              gradient: LinearGradient(
+                begin: Alignment(-1, -1),
+                end: Alignment(1, 1),
+                colors: <Color>[
+                  Color(0xff36d1dc),
+                  Color(0xff5b86e5),
+
+                ],
           )),
                 child: const SingleChildScrollView(
                    child: Column(
@@ -34,17 +37,20 @@ class MyInterest extends StatelessWidget {
                       Text(
                        style: TextStyle(
                          color: Colors.white,
-                         fontSize: 25.0,
-                         letterSpacing: 1.5,
-                         fontFamily: 'Dela',
+                         fontSize: 30.0,
+                         letterSpacing: 0.3,
+                         fontWeight: FontWeight.w500,
+                         fontFamily: 'lobster',
                        ),
                       'Beside my work, i do love to spend some time on my hobbies.'
                      ),
                       Text(
                           style: TextStyle(
-                            color: Colors.redAccent,
-                            fontSize: 20.0,
-                            fontFamily: 'Dela',
+                            color:Color(0xff000080),
+                            fontSize: 25.0,
+                            letterSpacing: 0.3,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'lobster',
                           ),
 
                           '''\n I love playing badminton and i am also a martial artist, currently holding brown belt in karate.

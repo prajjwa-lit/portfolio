@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 
@@ -8,10 +10,10 @@ class MySkills extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text("My Skills and academics",
+        backgroundColor: Colors.indigo[900],
+        title: const Text("My Skills",
           style: TextStyle(
-            color: Colors.red,
+            color: Colors.white,
             fontSize: 20,
             fontFamily: 'Oswald',
           ),
@@ -24,34 +26,64 @@ class MySkills extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         decoration: const BoxDecoration(
             gradient: LinearGradient(
+              begin: Alignment(-1, -1),
+              end: Alignment(1, 1),
               colors: <Color>[
-                Color(0xff210D10),
-                Color(0xff802201),
+                Color(0xff36d1dc),
+                Color(0xff5b86e5),
               ],
             )),
         child: const SingleChildScrollView(
           child: Column(
             children: [
+
               Text(
+          style: TextStyle(
+            color:Color(0xff000080),
+            fontSize: 25.0,
+            letterSpacing: 0.3,
+            fontWeight: FontWeight.w500,
+            fontFamily: 'lobster',
+          ),
+          '''Though a beginner, I have been exploring and trying out new technologies to select my domains. 
+I have a decent know-how of html and css for frontend web development.'''
+        ),
+        Text(
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 22.0,
                   letterSpacing: 1.5,
-                  fontFamily: 'Dela',
+                  fontFamily: 'lobster',
                 ),
-                '''Though a beginner, I have been exploring and trying out new technologies to select my domains. 
-I have a decent know-how of html and css for frontend web development. 
-I also know C++ language and java and currently i am learning flutter development to make cross platform applications'''
+                '''I also know C++ language and java and currently i am learning Flutter development to make cross platform applications'''
               ),
-        Text(
-          style: TextStyle(
-            color: Colors.redAccent,
-            fontSize: 20.0,
-            fontFamily: 'Dela',
-          ),
-          '''I have performed quite well in my academics as well. 
- I have secured 95% in my class 10th exams, 94% in 12th board exams and have managed to get a SGPA of just under 8 in my college.'''
-        ),
+              Row(
+                children: [
+                  Image(image: AssetImage('assets/html.png'),
+                  height: 100,
+                  ),
+                  Image(image: AssetImage('assets/css.png'),
+                    height: 100,
+                  ),
+                  Image(image: AssetImage('assets/flutter.png'),
+                    height: 100,
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Image(image: AssetImage('assets/c.png'),
+                    height: 100,
+                  ),
+                  Image(image: AssetImage('assets/c++.png'),
+                    height: 100,
+                  ),
+                  Image(image: AssetImage('assets/java.png'),
+                    height: 110,
+                  ),
+                ],
+              ),
+              
           ],
           ),
         ),

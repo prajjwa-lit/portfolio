@@ -4,8 +4,6 @@ import 'package:portfolio/skills.dart';
 
 void main() {
   return runApp(const MaterialApp(
-
-    debugShowCheckedModeBanner: false,
     home: MyPortfolio(),
   ));
 }
@@ -15,44 +13,47 @@ class MyPortfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.indigo[900],
           title: const Text(
             "My portfolio",
             style: TextStyle(
-              color: Colors.red,
+              color: Colors.white,
               fontSize: 20,
               fontFamily: 'Oswald',
             ),
           ),
         ),
         drawer: Drawer(
-          backgroundColor: Colors.black45,
+          backgroundColor: Colors.white70,
 
             child: ListView(
           children: [
             const UserAccountsDrawerHeader(
                 currentAccountPicture: CircleAvatar(
-                  radius: 100,
                   backgroundImage: AssetImage("assets/me2.jpg"),
                 ),
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
-                  colors: <Color>[
-                    Color(0xff210D10),
-                    Color(0xff802201),
+                      begin: Alignment(-1, -1),
+                      end: Alignment(1, 1),
+                      colors: <Color>[
+                        Color(0xff36d1dc),
+                        Color(0xff5b86e5),
                   ],
                 )),
                 accountName: Text('Prajjwal Tripathi',
                   style: TextStyle(
+                    color:Color(0xff000080),
                   fontSize: 20,
                   fontFamily: 'Oswald',
                 ),),
                 accountEmail: Text('prajjwalit@gmail.com',
                   style: TextStyle(
+                    color:Color(0xff000080),
                   fontSize: 20,
                   fontFamily: 'Oswald',
                 ),)),
@@ -67,7 +68,7 @@ class MyPortfolio extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 20,
                       fontFamily: 'Oswald',
-                        color: Colors.white,
+                        color:Color(0xff000080),
                     ), )),
             TextButton(
                 onPressed: () {
@@ -80,7 +81,7 @@ class MyPortfolio extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 20,
                         fontFamily: 'Oswald',
-                        color: Colors.white))),
+                        color:Color(0xff000080)))),
           ],
         )),
         body: Center(
@@ -88,37 +89,45 @@ class MyPortfolio extends StatelessWidget {
             padding: const EdgeInsets.all(10.0),
             decoration: const BoxDecoration(
                 gradient: LinearGradient(
+                  begin: Alignment(-1, -1),
+                  end: Alignment(1, 1),
               colors: <Color>[
-                Color(0xff210D10),
-                Color(0xff802201),
+                Color(0xff36d1dc),
+                Color(0xff5b86e5),
 
               ],
+
             )),
             child: SingleChildScrollView(
               child: Column(
                 children: [
                   const Image(
-                    image: AssetImage('assets/portfolioimg1.png'),
-                   height: 200,
+                    image: AssetImage('assets/portfolioimg.png'),
+                   height: 150,
                     width: 300,
                   ),
-                  const CircleAvatar(
-                    radius: 105,
-                    backgroundColor: Colors.redAccent,
-                    child: CircleAvatar(
-                      radius: 100,
-                      backgroundImage: AssetImage("assets/me2.jpg"),
+                  CircleAvatar(
+                    radius: 108,
+                    backgroundColor: Colors.white,
+                    child: const CircleAvatar(
+                      radius: 104,
+                      backgroundColor: Colors.indigo,
+                      child: CircleAvatar(
+                        radius: 100,
+                        backgroundImage: AssetImage("assets/me2.jpg"),
+                      ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: const Text(
-                      ('Hello my name is Prajjwal Tripathi. \n I am a sophomore at AKGEC, ghaziabad, pursuing my bachelor’s degree  in computer science.'),
+                      ('Hello, my name is Prajjwal Tripathi. \n I am a sophomore at AKGEC, ghaziabad, pursuing my bachelor’s degree  in computer science.'),
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 25.0,
-                        letterSpacing: 1.5,
-                        fontFamily: 'Dela',
+                        fontSize: 30.0,
+                        letterSpacing: 0.3,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'lobster',
                       ),
                     ),
                   ),
@@ -127,14 +136,16 @@ class MyPortfolio extends StatelessWidget {
                     child: const Text(
                       ('I am currently venturing into the field of app development.\nAs a Flutter developer i am excited to explore and work in this domain and build unique projects to showcase my skills. '),
                       style: TextStyle(
-                        color: Colors.redAccent,
-                        fontSize: 22.0,
-                        fontFamily: 'Dela',
+                        color:Color(0xff000080),
+                        fontSize: 25.0,
+                        letterSpacing: 0.3,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'lobster',
                       ),
                     ),
                   ),
                   Row(children: <Widget>[
-                    ElevatedButton(
+                    ElevatedButton.icon(
 
                         onPressed: () {
                           Navigator.push(
@@ -143,13 +154,25 @@ class MyPortfolio extends StatelessWidget {
                                 builder: (context) => const MyInterest()),
                           );
                         },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
-                          foregroundColor: Colors.redAccent// Background color
+                        icon: Icon(
+                          Icons.add_chart_outlined
                         ),
-                        child: const Text('My interests')),
+                        label: Text('My interests',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                            fontFamily: 'lobster',
+                          ),),
+                        style: ElevatedButton.styleFrom(
+
+                          shadowColor: Color(0xffffffff),
+                          backgroundColor: Color(0xff000080),
+                          foregroundColor: Colors.white// Background color
+                        ),
+
+                        ),
                     const SizedBox(width: 20,),
-                    ElevatedButton(
+                    ElevatedButton.icon(
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -157,11 +180,23 @@ class MyPortfolio extends StatelessWidget {
                                 builder: (context) => const MySkills()),
                           );
                         },
+                      icon: Icon(
+                        Icons.account_balance_rounded
+                      ),
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
-                            foregroundColor: Colors.redAccent// Background color
+                            shadowColor: Color(0xffffffff),
+                            backgroundColor: Color(0xff000080),
+                            foregroundColor: Colors.white// Background color
                         ),
-                        child: const Text('My skills')),
+                        label:  Text('My skills',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18.0,
+                            fontFamily: 'lobster',
+                          ),
+                        ),
+
+                    ),
                   ]),
                 ],
               ),
